@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spin-infinite {
+    animation: spin .5s linear infinite;
+  }
+	.slow-down-spin {
+		animation: spin 5s ease-out;
+	}
+}

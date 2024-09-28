@@ -1,16 +1,35 @@
 import type { MetaFunction } from "@remix-run/node";
+import Roulette from "src/components/roulette";
+import { RouletteOptionType } from "src/types/roulette";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "ルーレット アプリ" },
+    { name: "description", content: "テスト" },
   ];
 };
 
 export default function Index() {
+  const options: RouletteOptionType[] = [
+    { id: 1, name: "オプション1", range: 1 },
+    { id: 2, name: "オプション2", range: 2 },
+    { id: 3, name: "オプション3", range: 3 },
+    { id: 4, name: "オプション4", range: 4 },
+    { id: 5, name: "オプション5", range: 5 },
+    { id: 6, name: "オプション6", range: 6 },
+    { id: 7, name: "オプション7", range: 7 },
+    { id: 8, name: "オプション8", range: 8 },
+    { id: 9, name: "オプション9", range: 9 },
+    { id: 10, name: "オプション10", range: 10 },
+  ]
+  // const options: RouletteOptionType[] = [
+  //   { id: 1, name: "オプション1", range: 1 },
+  //   { id: 2, name: "オプション2", range: 1 },
+  // ]
   return (
     <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix</h1>
+      <h1 className="text-3xl">ルーレットアプリ</h1>
+      <Roulette options={options} vulnerability={false} />
       <ul className="list-disc mt-4 pl-6 space-y-2">
         <li>
           <a
